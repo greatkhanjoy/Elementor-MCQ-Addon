@@ -1,0 +1,90 @@
+p {
+    margin: 0;
+}
+
+.answer {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    cursor: pointer;
+    padding: 14px 14px;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 0 6px #00000029;
+    align-items: center;
+}
+
+.answer .bullet {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+}
+
+.answer.true .bullet,
+.answer.false .bullet {
+    position: relative;
+}
+
+.answer.true .bullet::before {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 5;
+    background: #008000c2;
+    content: "\2713";
+    color: #fff;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2px;
+}
+
+.answer.false .bullet::before {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 5;
+    background: #ff0000a6;
+    content: "\2718";
+    color: #fff;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2px;
+}
+
+.explanation {
+    display: none;
+    padding: 20px;
+    background: #d7f7d4;
+    font-size: 18px;
+    border: 2px solid #009819;
+    color: #5f6368;
+}
+
+.explanation.active,
+.elementor-editor-active .explanation {
+    display: block !important;
+}
+
+.elementor-widget-container p {
+    margin: 0;
+}
