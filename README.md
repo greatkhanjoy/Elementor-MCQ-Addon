@@ -1,7 +1,7 @@
-# Browter Quiz Addon for Elementor
+# MCQ, Quiz, Question Addon For Elementor
 
 ## Description
-Browter Quiz Addon is a simple and lightweight extension for Elementor that allows you to create engaging quizzes and questions on your WordPress site.
+MCQ, Quiz, Question Addon For Elementor is a simple and lightweight extension for Elementor that allows you to create engaging quizzes and questions on your WordPress site.
 
 ## Features
 - Easily integrate quizzes into your Elementor pages.
