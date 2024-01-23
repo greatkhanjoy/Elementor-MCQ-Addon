@@ -5,13 +5,17 @@ Description: A simple Elementor MCQ / Quiz / Question Addon.
 Version: 1.0
 Author: Imran Hosein Khan Joy (Greatkhanjoy)
 Author URI: https://greatkhanjoy.netlify.app
+Text Domain: browter_mcq_addon
+Domain Path: /languages/
+Requires at least: 6.2
+Requires PHP: 7.4
 */
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-class Browter_Quiz_Addon
+class Browter_MCQ_Addon
 {
 
     public function __construct()
@@ -24,25 +28,25 @@ class Browter_Quiz_Addon
     public function register_elementor_widgets()
     {
         if (class_exists('Elementor\Widget_Base')) {
-            require_once('elementor-widget-quiz.php');
+            require_once('elementor-widget-mcq.php');
         }
     }
 
     public function enqueue_scripts()
     {
-        wp_enqueue_style('browter-quiz-addon-styles', plugin_dir_url(__FILE__) . 'assets/styles.css');
+        wp_enqueue_style('browter-mcq-addon-styles', plugin_dir_url(__FILE__) . 'assets/styles.css');
 
-        wp_enqueue_script('browter-quiz-addon-script', plugin_dir_url(__FILE__) . 'assets/script.js', array('jquery'), '1.0', true);
+        wp_enqueue_script('browter-mcq-addon-script', plugin_dir_url(__FILE__) . 'assets/script.js', array('jquery'), '1.0', true);
     }
 
     public function elementor_check_notice()
     {
         if (!is_plugin_active('elementor/elementor.php')) {
             echo '<div class="notice notice-error is-dismissible">
-                <p>Elementor is required for <strong>Browter Quiz</strong> plugin to work. Please install and activate Elementor.</p>
+                <p>Elementor is required for <strong>Browter MCQ </strong> plugin to work. Please install and activate Elementor.</p>
             </div>';
         }
     }
 }
 
-new Browter_Quiz_Addon();
+new Browter_MCQ_Addon();
