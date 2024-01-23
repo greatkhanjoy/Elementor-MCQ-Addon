@@ -1,7 +1,7 @@
 === MCQ, Quiz, Question Addon For Elementor ===
 Contributors: greatkhanjoy
 Tags: elementor, quiz, addon, questions, mcq
-Requires at least: 4.9
+Requires at least: 6.2
 Tested up to: 6.4.2
 Stable tag: 1.0
 License: GPL-2.0-or-later
