@@ -5,17 +5,19 @@ Description: A simple Elementor MCQ / Quiz / Question Addon.
 Version: 1.0
 Author: Imran Hosein Khan Joy (Greatkhanjoy)
 Author URI: https://greatkhanjoy.netlify.app
-Text Domain: browter_mcq_addon
+Text Domain: browter-mcq-quiz-question-addon-for-elementor
 Domain Path: /languages/
 Requires at least: 6.2
 Requires PHP: 7.4
+License: GPLv2
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-class Browter_MCQ_Addon
+class BMCQ_Elementor_Addon
 {
 
     public function __construct()
@@ -49,4 +51,4 @@ class Browter_MCQ_Addon
     }
 }
 
-new Browter_MCQ_Addon();
+new BMCQ_Elementor_Addon();

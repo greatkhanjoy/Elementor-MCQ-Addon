@@ -1,6 +1,9 @@
 <?php
 
-class Browter_Widget_MCQ extends \Elementor\Widget_Base
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+
+class BMCQ_Elementor_Widget extends \Elementor\Widget_Base
 {
 
     public function get_name()
@@ -28,17 +31,17 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->start_controls_section(
             'quiz_section',
             [
-                'label' => __('Questions', 'browter_mcq_addon'),
+                'label' => __('Questions', 'browter-mcq-quiz-question-addon-for-elementor'),
             ]
         );
 
         $this->add_control(
             'show_title',
             [
-                'label' => esc_html__('Show Title', 'browter_mcq_addon'),
+                'label' => esc_html__('Show Title', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'browter_mcq_addon'),
-                'label_off' => esc_html__('Hide', 'browter_mcq_addon'),
+                'label_on' => esc_html__('Show', 'browter-mcq-quiz-question-addon-for-elementor'),
+                'label_off' => esc_html__('Hide', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -47,9 +50,9 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'title',
             [
-                'label' => esc_html__('Title', 'browter_mcq_addon'),
+                'label' => esc_html__('Title', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default'   =>  __('Title Here', 'browter_mcq_addon'),
+                'default'   =>  __('Title Here', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'condition' => [
                     'show_title' => 'yes',
                 ],
@@ -61,18 +64,18 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $repeater->add_control(
             'question',
             [
-                'label' => __('Question', 'browter_mcq_addon'),
+                'label' => __('Question', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('What is the capital of Bangladesh?', 'browter_mcq_addon'),
+                'default' => __('What is the capital of Bangladesh?', 'browter-mcq-quiz-question-addon-for-elementor'),
             ]
         );
 
         $repeater->add_control(
             'question_subtitle',
             [
-                'label' => __('Sub Title', 'browter_mcq_addon'),
+                'label' => __('Sub Title', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Question 1', 'browter_mcq_addon'),
+                'default' => __('Question 1', 'browter-mcq-quiz-question-addon-for-elementor'),
             ]
         );
 
@@ -82,7 +85,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $repeater->start_controls_section(
             'answer_section',
             [
-                'label' => __('Answers', 'browter_mcq_addon'),
+                'label' => __('Answers', 'browter-mcq-quiz-question-addon-for-elementor'),
             ]
         );
 
@@ -90,66 +93,66 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $repeater->add_control(
             'answer1',
             [
-                'label' => __('Answer One', 'browter_mcq_addon'),
+                'label' => __('Answer One', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Rome', 'browter_mcq_addon'),
+                'default' => __('Rome', 'browter-mcq-quiz-question-addon-for-elementor'),
             ]
         );
         $repeater->add_control(
             'answer2',
             [
-                'label' => __('Answer Two', 'browter_mcq_addon'),
+                'label' => __('Answer Two', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Dhaka', 'browter_mcq_addon'),
+                'default' => __('Dhaka', 'browter-mcq-quiz-question-addon-for-elementor'),
             ]
         );
         $repeater->add_control(
             'answer3',
             [
-                'label' => __('Answer Three', 'browter_mcq_addon'),
+                'label' => __('Answer Three', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Paris', 'browter_mcq_addon'),
+                'default' => __('Paris', 'browter-mcq-quiz-question-addon-for-elementor'),
             ]
         );
         $repeater->add_control(
             'answer4',
             [
-                'label' => __('Answer Four', 'browter_mcq_addon'),
+                'label' => __('Answer Four', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Moscow', 'browter_mcq_addon'),
+                'default' => __('Moscow', 'browter-mcq-quiz-question-addon-for-elementor'),
             ]
         );
         $repeater->add_control(
             'correct_answer',
             [
-                'label' => __('Correct Answer', 'browter_mcq_addon'),
+                'label' => __('Correct Answer', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Dhaka', 'browter_mcq_addon'),
+                'default' => __('Dhaka', 'browter-mcq-quiz-question-addon-for-elementor'),
             ]
         );
 
         $repeater->add_control(
             'explainer_prefix',
             [
-                'label' => __('Explainer Prefix', 'browter_mcq_addon'),
+                'label' => __('Explainer Prefix', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Explanation:', 'browter_mcq_addon'),
+                'default' => __('Explanation:', 'browter-mcq-quiz-question-addon-for-elementor'),
             ]
         );
 
         $repeater->add_control(
             'explainer',
             [
-                'label' => __('Explainer', 'browter_mcq_addon'),
+                'label' => __('Explainer', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __('Dhaka is the capital city of Bangladesh, in southern Asia. Set beside the Buriganga River, it is at the center of national government, trade and culture. The 17th-century old city was the Mughal capital of Bengal, and many palaces and mosques remain.', 'browter_mcq_addon'),
+                'default' => __('Dhaka is the capital city of Bangladesh, in southern Asia. Set beside the Buriganga River, it is at the center of national government, trade and culture. The 17th-century old city was the Mughal capital of Bengal, and many palaces and mosques remain.', 'browter-mcq-quiz-question-addon-for-elementor'),
             ]
         );
 
         $this->add_control(
             'question_item',
             [
-                'label' => __('Question List', 'browter_mcq_addon'),
+                'label' => __('Question List', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
 
@@ -162,7 +165,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->start_controls_section(
             'layout_style_section',
             [
-                'label' => __('Layout', 'browter_mcq_addon'),
+                'label' => __('Layout', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -170,7 +173,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'layout_padding',
             [
-                'label' => __('Padding', 'browter_mcq_addon'),
+                'label' => __('Padding', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -182,7 +185,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'layout_margin',
             [
-                'label' => __('Margin', 'browter_mcq_addon'),
+                'label' => __('Margin', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -215,7 +218,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->start_controls_section(
             'question_title_style',
             [
-                'label' => __('Title', 'browter_mcq_addon'),
+                'label' => __('Title', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -224,7 +227,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'question_title_color',
             [
-                'label' => __('Title Color', 'browter_mcq_addon'),
+                'label' => __('Title Color', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title' => 'color: {{VALUE}}',
@@ -245,7 +248,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'question_title_padding',
             [
-                'label' => __('Padding', 'browter_mcq_addon'),
+                'label' => __('Padding', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -257,7 +260,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'question_title_margin',
             [
-                'label' => __('Margin', 'browter_mcq_addon'),
+                'label' => __('Margin', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -272,7 +275,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->start_controls_section(
             'question_section_style',
             [
-                'label' => __('Question', 'browter_mcq_addon'),
+                'label' => __('Question', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -281,7 +284,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name' => 'question_section_bgcolor',
-                'label' => __('Background', 'browter_mcq_addon'),
+                'label' => __('Background', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .quiz-container',
             ]
@@ -291,7 +294,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'question_section_padding',
             [
-                'label' => __('Padding', 'browter_mcq_addon'),
+                'label' => __('Padding', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -303,7 +306,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'question_section_margin',
             [
-                'label' => __('Margin', 'browter_mcq_addon'),
+                'label' => __('Margin', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -337,7 +340,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->start_controls_section(
             'question_style_section',
             [
-                'label' => __('Question Title', 'browter_mcq_addon'),
+                'label' => __('Question Title', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -346,7 +349,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'question_color',
             [
-                'label' => __('Question Title Color', 'browter_mcq_addon'),
+                'label' => __('Question Title Color', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .question' => 'color: {{VALUE}}',
@@ -367,7 +370,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'question_padding',
             [
-                'label' => __('Padding', 'browter_mcq_addon'),
+                'label' => __('Padding', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -379,7 +382,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'question_margin',
             [
-                'label' => __('Margin', 'browter_mcq_addon'),
+                'label' => __('Margin', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -393,7 +396,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->start_controls_section(
             'question_subtitle_style_section',
             [
-                'label' => __('Question Subtitle', 'browter_mcq_addon'),
+                'label' => __('Question Subtitle', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -401,7 +404,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'question_subtitle_color',
             [
-                'label' => __('Color', 'browter_mcq_addon'),
+                'label' => __('Color', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .question-subtitile' => 'color: {{VALUE}}',
@@ -420,7 +423,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'question_subtitle_padding',
             [
-                'label' => __('Padding', 'browter_mcq_addon'),
+                'label' => __('Padding', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -432,7 +435,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'question_subtitle_margin',
             [
-                'label' => __('Margin', 'browter_mcq_addon'),
+                'label' => __('Margin', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -446,7 +449,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->start_controls_section(
             'answer_style_section',
             [
-                'label' => __('Answer', 'browter_mcq_addon'),
+                'label' => __('Answer', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -455,7 +458,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name' => 'answer_background_color',
-                'label' => __('Background', 'browter_mcq_addon'),
+                'label' => __('Background', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .answer',
             ]
@@ -485,7 +488,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'answer_color',
             [
-                'label' => __('Answer Color', 'browter_mcq_addon'),
+                'label' => __('Answer Color', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .answer_text' => 'color: {{VALUE}}',
@@ -504,7 +507,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'answer_padding',
             [
-                'label' => __('Padding', 'browter_mcq_addon'),
+                'label' => __('Padding', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -516,7 +519,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'answer_margin',
             [
-                'label' => __('Margin', 'browter_mcq_addon'),
+                'label' => __('Margin', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -531,7 +534,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->start_controls_section(
             'bullet_style_section',
             [
-                'label' => __('Point', 'browter_mcq_addon'),
+                'label' => __('Point', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -540,7 +543,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name' => 'bullet_background_color',
-                'label' => __('Background', 'browter_mcq_addon'),
+                'label' => __('Background', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .bullet',
             ]
@@ -549,7 +552,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'bullet_color',
             [
-                'label' => __('Color', 'browter_mcq_addon'),
+                'label' => __('Color', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .bullet' => 'color: {{VALUE}}',
@@ -568,7 +571,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'bullet_width',
             [
-                'label' => __('Width', 'browter_mcq_addon'),
+                'label' => __('Width', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -580,7 +583,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'bullet_height',
             [
-                'label' => __('Height', 'browter_mcq_addon'),
+                'label' => __('Height', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -592,7 +595,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'bullet_padding',
             [
-                'label' => __('Padding', 'browter_mcq_addon'),
+                'label' => __('Padding', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -604,7 +607,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'bullet_margin',
             [
-                'label' => __('Margin', 'browter_mcq_addon'),
+                'label' => __('Margin', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -636,7 +639,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->start_controls_section(
             'explanation_style_section',
             [
-                'label' => __('Explanation', 'browter_mcq_addon'),
+                'label' => __('Explanation', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -645,7 +648,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name' => 'explanation_background_color',
-                'label' => __('Background', 'browter_mcq_addon'),
+                'label' => __('Background', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .explanation',
             ]
@@ -654,7 +657,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'explanation_color',
             [
-                'label' => __('Color', 'browter_mcq_addon'),
+                'label' => __('Color', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .explanation_content' => 'color: {{VALUE}}',
@@ -673,7 +676,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'explanation_padding',
             [
-                'label' => __('Padding', 'browter_mcq_addon'),
+                'label' => __('Padding', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -685,7 +688,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'explanation_margin',
             [
-                'label' => __('Margin', 'browter_mcq_addon'),
+                'label' => __('Margin', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -717,7 +720,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->start_controls_section(
             'explanation_prefix_section',
             [
-                'label' => __('Explanation Prefix', 'browter_mcq_addon'),
+                'label' => __('Explanation Prefix', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -725,7 +728,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'explanation_prefix_color',
             [
-                'label' => __('Color', 'browter_mcq_addon'),
+                'label' => __('Color', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .explanation_prefix' => 'color: {{VALUE}}',
@@ -745,7 +748,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name' => 'explanation_prefix_background_color',
-                'label' => __('Background', 'browter_mcq_addon'),
+                'label' => __('Background', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .explanation_prefix',
             ]
@@ -756,7 +759,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'explanation_prefix_padding',
             [
-                'label' => __('Padding', 'browter_mcq_addon'),
+                'label' => __('Padding', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -768,7 +771,7 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
         $this->add_control(
             'explanation_prefix_margin',
             [
-                'label' => __('Margin', 'browter_mcq_addon'),
+                'label' => __('Margin', 'browter-mcq-quiz-question-addon-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -873,4 +876,4 @@ class Browter_Widget_MCQ extends \Elementor\Widget_Base
     }
 }
 
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Browter_Widget_MCQ());
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new BMCQ_Elementor_Widget());

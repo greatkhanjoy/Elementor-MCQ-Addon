@@ -1,11 +1,14 @@
 === MCQ, Quiz, Question Addon For Elementor ===
+Plugin Name: MCQ, Quiz, Question Addon For Elementor
+Version: 1.0.0
+Author: weDevs
 Contributors: greatkhanjoy
-Tags: elementor, quiz, addon, questions, mcq
+Tags: Elementor, Elementor Addons, quiz, Elementor Widget, Elementor Addon, questions, mcq
 Requires at least: 6.2
 Tested up to: 6.4.2
 Stable tag: 1.0
-License: GPL-2.0-or-later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Create engaging quizzes with the MCQ, Quiz, Question Addon for Elementor.
 
