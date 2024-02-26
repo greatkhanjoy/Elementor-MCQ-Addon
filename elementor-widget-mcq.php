@@ -2,6 +2,7 @@
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
+}
 
 class BMCQ_Elementor_Widget extends \Elementor\Widget_Base
 {

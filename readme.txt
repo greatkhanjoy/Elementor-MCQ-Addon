@@ -1,9 +1,9 @@
 === MCQ, Quiz, Question Addon For Elementor ===
 Plugin Name: MCQ, Quiz, Question Addon For Elementor
 Version: 1.0.0
-Author: weDevs
+Author: Imran Hosein Khan Joy (Greatkhanjoy)
 Contributors: greatkhanjoy
-Tags: Elementor, Elementor Addons, quiz, Elementor Widget, Elementor Addon, questions, mcq
+Tags: Elementor, Elementor Addons, quiz, Elementor Widget, questions, mcq
 Requires at least: 6.2
 Tested up to: 6.4.2
 Stable tag: 1.0
